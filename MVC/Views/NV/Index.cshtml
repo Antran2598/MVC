@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVC.ChitietNV>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>NV LIST</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chucvu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phongban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chuthich)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chucvu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phongban)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chuthich)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Manv }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Manv }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Manv })
+        </td>
+    </tr>
+}
+
+</table>
